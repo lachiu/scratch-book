@@ -1,0 +1,96 @@
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		color-scheme: light dark;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+		interpolate-size: allow-keywords;
+		hanging-punctuation: first last;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+
+	body {
+		min-block-size: 100dvh;
+		line-height: 1.5;
+		font-family: system-ui, sans-serif;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1.1;
+		text-wrap: balance;
+	}
+
+	p, li, figcaption, blockquote {
+		text-wrap: pretty;
+		overflow-wrap: break-word;
+	}
+
+	img, picture, video, canvas, svg {
+		display: block;
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+
+	input, button, textarea, select {
+		font: inherit;
+		color: inherit;
+		letter-spacing: inherit;
+	}
+
+	textarea {
+		field-sizing: content;
+		min-block-size: 3lh;
+		resize: vertical;
+	}
+
+	button, [role="button"], label[for], select, summary {
+		cursor: pointer;
+	}
+
+	ul[role="list"], ol[role="list"] {
+		list-style: none;
+	}
+
+	a:not([class]) {
+		color: currentColor;
+		text-decoration-skip-ink: auto;
+		text-underline-offset: 0.15em;
+	}
+
+	:target {
+		scroll-margin-block: 5ex;
+	}
+
+	:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
+	}
+
+	[hidden]:not([hidden="until-found"]) {
+		display: none !important;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}
